@@ -19,13 +19,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Outl1ne\\LaravelElasticLogger\\": "src/"
+            "MagmaTech\\LoggerElastic\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "magma-tech\\LaravelElasticLogger\\LaravelElasticLoggerServiceProvider"
+                "MagmaTech\\LoggerElastic\\ElasticLoggerServiceProvider"
             ]
         }
     },
