@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MagmaTech\\LoggerElastic\\src\\ElasticLoggerServiceProvider"
+                "MagmaTech\\LoggerElastic\\ElasticLoggerServiceProvider"
             ]
         }
     },
