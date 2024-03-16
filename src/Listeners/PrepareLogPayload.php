@@ -1,11 +1,11 @@
 <?php
 
-namespace MagmaTech\ElasticLogger\Listeners;
+namespace MagmaTech\LoggerElastic\Listeners;
 
 use DateTime;
 use DateTimeZone;
 use Exception;
-use MagmaTech\ElasticLogger\Jobs\HandleSendLogToElastic;
+use MagmaTech\LoggerElastic\Jobs\HandleSendLogToElastic;
 use Illuminate\Log\Events\MessageLogged;
 
 class PrepareLogPayload

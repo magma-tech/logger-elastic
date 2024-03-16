@@ -1,6 +1,6 @@
 <?php
 
-namespace MagmaTech\ElasticLogger\Jobs;
+namespace MagmaTech\LoggerElastic\Jobs;
 
 use Elastic\Elasticsearch\ClientBuilder;
 use Exception;

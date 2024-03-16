@@ -1,8 +1,8 @@
 <?php
 
-namespace MagmaTech\ElasticLogger\Providers;
+namespace MagmaTech\LoggerElastic\Providers;
 
-use MagmaTech\ElasticLogger\Listeners\PrepareLogPayload;
+use MagmaTech\LoggerElastic\Listeners\PrepareLogPayload;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Log\Events\MessageLogged;
 

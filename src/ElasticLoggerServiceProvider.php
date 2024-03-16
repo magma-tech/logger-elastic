@@ -1,9 +1,9 @@
 <?php
 
-namespace MagmaTech\ElasticLogger;
+namespace MagmaTech\LoggerElastic;
 
 use Illuminate\Support\ServiceProvider;
-use MagmaTech\ElasticLogger\Providers\EventServiceProvider;
+use MagmaTech\LoggerElastic\Providers\EventServiceProvider;
 
 class ElasticLoggerServiceProvider extends ServiceProvider {
 
