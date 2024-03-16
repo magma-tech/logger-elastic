@@ -1,0 +1,37 @@
+{
+    "name": "magma-tech/logger-elastic",
+    "description": "Elastic Cloud logging for MessageLogged event.",
+    "keywords": [
+        "laravel",
+        "elastic"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akpagni Augustin",
+            "email": "akpagniaugustin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^10.0 || ^11.0 ",
+        "elasticsearch/elasticsearch": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Outl1ne\\LaravelElasticLogger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "magma-tech\\LaravelElasticLogger\\LaravelElasticLoggerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
