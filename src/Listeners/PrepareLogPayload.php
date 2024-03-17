@@ -59,7 +59,7 @@ class PrepareLogPayload
                     'context' => $event->context
                 ];
             }
-            HandleSendLogToElastic::dispatch($logData);
+            HandleSendLogToElastic::dispatch($logData)->afterResponse();
         } catch (Exception $exception) {
             // TODO - exception handling.
         }

@@ -31,10 +31,6 @@ class HandleSendLogToElastic implements ShouldQueue
 
     /** @var string */
     private string $elasticIndex;
-
-    /** @var string */
-    private string $lifecyclePolicy;
-
     /**
      * Create a new job instance.
      *
@@ -46,7 +42,6 @@ class HandleSendLogToElastic implements ShouldQueue
         $this->elasticId = config('elastic_logging.elastic_cloud_id');
         $this->elasticApiKey = config('elastic_logging.elastic_api_key');
         $this->elasticIndex = config('elastic_logging.elastic_index');
-        $this->lifecyclePolicy = config('elastic_logging.elastic_lifecycle_policy');
     }
 
     /**
@@ -54,7 +49,7 @@ class HandleSendLogToElastic implements ShouldQueue
      */
     public function handle(): void
     {
-        $indexName = $this->elasticIndex . '_' . $this->data['datetime']->format('d-m-Y');
+        $indexName = $this->elasticIndex;
         $currentIndexNameCached = Cache::get('elastic_index_name');
         if($currentIndexNameCached !== $indexName){
             $this->createIndex($indexName);
@@ -80,10 +75,10 @@ class HandleSendLogToElastic implements ShouldQueue
      */
     private function getClient(): Client
     {
-        return ClientBuilder::create()
-            ->setElasticCloudId($this->elasticId)
-            ->setApiKey($this->elasticApiKey)
-            ->build();
+        return  ClientBuilder::create()
+        ->setElasticCloudId($this->elasticId)
+        ->setApiKey($this->elasticApiKey)
+        ->build();
     }
 
     private function createIndex(string $indexName): void
@@ -119,9 +114,6 @@ class HandleSendLogToElastic implements ShouldQueue
                         ]
                     ]
                 ];
-                if($this->lifecyclePolicy){
-                    $params['body']['settings']['index.lifecycle.name'] = $this->lifecyclePolicy;
-                }
                 $response = $this->getClient()->indices()->create($params);
                 if($response->getStatusCode() === 200){
                     Cache::put('current_elastic_index', $indexName, 86400);
