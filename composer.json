@@ -1,6 +1,6 @@
 {
     "name": "magma-tech/logger-elastic",
-    "description": "Elastic Cloud logging for MessageLogged event.",
+    "description": "Elastic Cloud logging for MessageLogged event",
     "keywords": [
         "laravel",
         "elastic"
